@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap & css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <title>Web Dev Homework</title>
+    <link rel="icon" href="icon.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-10 offset-1" id="main">
+          <div id="header">
+            <h1>r/<span id="header-offset">Business</span></h1>
+          </div>
+          <div id="post-area"></div>
+          <div id="button-area">
+            <button type="button" class="btn btn-outline-light" id="previous-btn" onclick="previousButton();">previous</button>
+            <button type="button" class="btn btn-light" id="next-btn" onclick="nextButton();">next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- handlebars -->
+    <script script id="post-template" type="text/x-handlebars-template">
+      {{#each post}}
+      <a href="{{this.url}}" target="_blank">
+        <div id="post">
+          <h4>{{this.title}}</h4>
+          <div id="bottom-container">
+            <p id="comment-text">{{this.comments}} comments</p>
+            <p id="author-text">submitted by {{this.author}}</p>
+          </div>
+        </div>
+      </a>
+      {{/each}}
+    </script>
+
+    <!-- js scripting -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.8/handlebars.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
